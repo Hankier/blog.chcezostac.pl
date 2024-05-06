@@ -14,11 +14,11 @@ const siteMetadata = {
   email: 'kontakt@chcezostac.pl',
   github: 'https://github.com',
   twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
+  facebook: 'https://www.facebook.com/chcezostac/',
+  youtube: 'https://www.youtube.com/channel/UCtYyw4zZ8qHQllq2XLngSzg',
   linkedin: 'https://www.linkedin.com',
   threads: 'https://www.threads.net',
-  instagram: 'https://www.instagram.com',
+  instagram: 'https://www.instagram.com/chcezostac/',
   locale: 'pl-PL',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
@@ -66,7 +66,7 @@ const siteMetadata = {
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'light',
+      theme: 'transparent_dark',
       // theme when dark mode
       darkTheme: 'transparent_dark',
       // If the theme option above is set to 'custom`

@@ -27,6 +27,11 @@ module.exports = {
       colors: {
         primary: colors.pink,
         gray: colors.gray,
+        'cz-bg-dark': '#191c21',
+        'cz-pink': '#e4144d',
+        'cz-blue': '#4230db',
+        'cz-purple': '#7b26a8',
+        'cz-magenta': '#b91b71',
       },
       typography: ({ theme }) => ({
         DEFAULT: {
