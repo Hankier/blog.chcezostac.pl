@@ -17,7 +17,7 @@ const BannerOTO = ({ text, buttonText, imgSrc, href }) => (
                 </Link>
             </div>
             <div className="w-full h-full col-span-2 content-center mx-auto py-auto text-left">
-                <div className="space-x-4 font-bold text-xl">
+                <div className="space-x-4 font-bold text-lg lg:text-xl">
                     <div className="text-white">{text}</div>    
                 </div>
                 <div className="mt-8">

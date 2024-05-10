@@ -116,24 +116,24 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 </div>
               </div>
               </div>
-              <div className="w-full pt-4 pb-8 pr-8">
+              <div className="pt-4 pb-2 md:pb-8 md:pr-8">
                 {authorDetails.map((author) => (
-                  <li className="flex items-center space-x-2" key={author.name}>
+                  <li className="flex items-start md:items-center space-x-2" key={author.name}>
                     {author.avatar && (
                       <Image
                         src={author.avatar}
                         width={468}
                         height={468}
                         alt="avatar"
-                        className="rounded-full"
+                        className="rounded-full h-14 w-14 md:h-20 md:w-20 lg:h-24 lg:w-24 xl:h-28 xl:w-28"
                       />
                     )}
-                    <dl className="font-medium leading-5">
+                    <dl className="font-medium leading-3 md:leading-5">
                       <dt className="sr-only">Imię i nazwisko</dt>
-                      <dd className="text-lg text-gray-900 dark:text-gray-100">{author.name}</dd>
-                        <div className="mt-4">
+                      <dd className="text-normal lg:text-lg text-gray-900 dark:text-gray-100">{author.name}</dd>
+                        <div className="mt-2 md:mt-4">
                           <dt className="sr-only">Informacja o autorze</dt>
-                          <dd className="text-normal font-normal leading-6 dark:text-gray-200">
+                          <dd className="text-sm lg:text-normal font-normal leading-6 dark:text-gray-200">
                             {author.description}
                           </dd>
                         </div>
