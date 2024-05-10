@@ -3,9 +3,9 @@ import Link from './Link'
 
 const BannerOTO = ({ text, buttonText, imgSrc, href }) => (
     <div className="w-full pt-4 pb-8">
-        <div class="w-full bg-gradient-to-r from-cz-blue to-cz-pink py-px">
-        <div class="h-full w-full grid grid-cols-3 gap-4 bg-cz-bg-dark back flex items-center py-4 ">
-            <div class="w-full mx-auto flex justify-center">
+        <div className="w-full bg-gradient-to-r from-cz-blue to-cz-pink py-px">
+        <div className="h-full w-full grid grid-cols-3 gap-4 bg-cz-bg-dark back flex items-center py-4 ">
+            <div className="w-full mx-auto flex justify-center">
                 <Link href={href} aria-label={`Link to ${text}`}>
                     <Image
                     alt={text}
