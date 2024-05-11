@@ -48,12 +48,15 @@ const NewsletterForm = () => {
     <div className="w-full pt-4 pb-8">
         <div className="w-full bg-gradient-to-r from-cz-blue to-cz-pink pt-px">
             <div className="w-full bg-cz-bg-dark text-center mx-auto py-4">
+                <div className="pb-4">
+                    <h2 class="text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cz-purple to-cz-pink">Zapisz się na newsletter i bądź na bieżąco.</h2>
+                </div>
                 <form onSubmit={handleSubmit}>
                     <input 
                         className="text-white mx-4 font-bold text-lg py-2 px-2 rounded bg-cz-bg-dark border border-gray-200 focus:border-cz-magenta focus:ring-cz-magenta" placeholder="Email"
                         value={input}
                         onChange={e => setInput(e.target.value)}
-                        placeholder="Twój email"
+                        placeholder="jan@kowalski.pl"
                         required
                         type="email"
                     />
@@ -63,7 +66,7 @@ const NewsletterForm = () => {
                         disabled={!input}
                         type="submit"
                     >
-                    Subscribe
+                    Zapisuję się!
                     </button>
                 </form>
                 {successMessage && <p>{successMessage}</p>}

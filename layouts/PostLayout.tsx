@@ -173,7 +173,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 </div>
                 <div className="pt-4 xl:pt-8 pb-4">
                   <Link
-                    href={`/${basePath}`}
+                    href="/"
                     className="text-cz-pink hover:text-ch-purple dark:hover:text-cz-purple"
                     aria-label="Back to the blog"
                   >
