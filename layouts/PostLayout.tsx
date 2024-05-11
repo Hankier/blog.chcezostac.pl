@@ -98,9 +98,9 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 <div className="prose max-w-none pb-8 dark:prose-invert">{children}</div>
               </div>
               <div className="w-full pt-4 pb-8">
-              <div class="w-full bg-gradient-to-r from-cz-purple to-cz-pink py-px">
-                <div class="flex h-full w-full columns-2 bg-cz-bg-dark back flex items-center py-4 px-1">
-                  <div class="w-full">
+              <div className="w-full bg-gradient-to-r from-cz-purple to-cz-pink py-px">
+                <div className="flex h-full w-full columns-2 bg-cz-bg-dark back flex items-center py-4 px-1">
+                  <div className="w-full">
                     <span className="text-xl">Spodobał Ci się ten artykuł?</span>
                     <br />
                     <span className="font-bold text-xl">Podziel się ze znajomymi!</span>
