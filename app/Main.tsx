@@ -1,5 +1,6 @@
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
+import Image from '@/components/Image'
 import NewsletterForm from '@/components/NewsletterForm'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
@@ -22,19 +23,24 @@ export default function Home({ posts }) {
           <ul className="w-full bg-cz-bg-dark">
             {!posts.length && 'No posts found.'}
             {posts.slice(0, MAX_DISPLAY).map((post) => {
-              const { slug, date, title, summary, tags } = post
+              const { slug, date, title, summary, tags, images } = post
               return (
                 <li key={slug} className="py-12">
                   <article>
-                    <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                      <dl>
-                        <dt className="sr-only">Opublikowano</dt>
-                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                          <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                        </dd>
-                      </dl>
-                      <div className="space-y-5 xl:col-span-3">
+                    <div className="space-y-2 lg:grid lg:grid-cols-4 lg:items-start xl:space-y-0">
+                      <div className="hidden lg:block px-4">
+                        {images.map((image) => (
+                          <Image src={image} alt={title} width={256} height={128} />
+                        ))}
+                      </div>
+                      <div className="space-y-5 lg:col-span-3">
                         <div className="space-y-6">
+                          <dl>
+                            <dt className="sr-only">Opublikowano</dt>
+                            <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                              <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
+                            </dd>
+                          </dl>
                           <div>
                             <h2 className="text-2xl font-bold leading-8 tracking-tight">
                               <Link
@@ -44,15 +50,22 @@ export default function Home({ posts }) {
                                 {title}
                               </Link>
                             </h2>
-                            <div className="flex flex-wrap">
+                            <div className="flex flex-wrap my-2">
                               {tags.map((tag) => (
                                 <Tag key={tag} text={tag} />
                               ))}
                             </div>
                           </div>
                           <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                            {summary}
                           </div>
+                        </div>
+                        <div className="text-base font-medium leading-6">
+                          <Link
+                            href={`/${slug}`}
+                            className=""
+                          >
+                            {summary}
+                          </Link>
                         </div>
                         <div className="text-base font-medium leading-6">
                           <Link

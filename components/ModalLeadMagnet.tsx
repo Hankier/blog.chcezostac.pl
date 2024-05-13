@@ -1,4 +1,6 @@
 "use client";
+
+import Image from '@/components/Image';
 import { useState, useEffect } from 'react';
 
 const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
@@ -46,7 +48,7 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
                     <br />
                     <span className="font-bold bg-clip-text text-lg lg:text-2xl text-transparent bg-gradient-to-r from-cz-blue to-cz-pink">{subtitle}</span></h2>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-4">
-                        <img src={imageSrc} alt="Modal Image" className="lg:w-1/2 w-1/2 object-cover" />
+                        <Image src={imageSrc} alt="Modal Image" className="lg:w-1/2 w-1/2 object-cover" />
                         <div className="flex flex-col items-center w-1/2 lg:w-full">
                             <input type="text" placeholder="jan@kowalski.pl" className="text-white mx-4 font-bold text-lg py-2 px-2 rounded bg-cz-bg-dark border border-gray-200 focus:border-cz-magenta focus:ring-cz-magenta" />
                             <button className="mt-4 px-4 py-2 bg-cz-magenta text-white rounded-md">
