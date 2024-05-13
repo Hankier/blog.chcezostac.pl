@@ -32,8 +32,14 @@ interface LayoutProps {
 }
 
 export default function PostLayout({ content, authorDetails, next, prev, children }: LayoutProps) {
-  const { filePath, path, slug, date, title, tags } = content
+  const { filePath, path, slug, date, title, tags, lm_title, lm_subtitle, lm_image, lm_list } = content
   const basePath = path.split('/')[0]
+  console.log('basePath', basePath)
+  console.log('filepath', filePath)
+  console.log('lm_imageSrc', lm_image)
+  //const lm_title = 'Odbierz Bezpłatny webinar <br /> Małgorzaty Biegańskiej-Hendryk' 
+  //const lm_subtitle = '"Jak pokonać 5 najczęstszych problemów w opiece nad kotem?"'
+  //const lm_imageSrc = '/static/images/cat-lm.jpg'
 
   return (
     <SectionContainer>
@@ -41,6 +47,9 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
       <article>
         <div className="lg:grid lg:grid-cols-8 lg:gap-0 w-full lg:w-4/5 mx-auto px-6 lg:px-0 pt-4 lg:pt-12">
           <div className="lg:col-span-5">
+            <div className="text-gray-300 text-sm font-light">
+            <Link href='https://chcezostac.pl' className="hover:text-cz-pink hover:font-normal">Strona Główna</Link> &gt; <Link href='/' className="hover:text-cz-pink hover:font-normal">Blog</Link> &gt; <Link href={`/${slug}`} className="hover:text-cz-pink hover:font-normal">{title}</Link>
+            </div>
             <header className="pt-6 xl:pb-6">
               <div className="space-y-1 text-left">
                 <div>
@@ -196,7 +205,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
           </div>
         </div>
       </article>
-      <ModalLeadMagnet />
+      <ModalLeadMagnet title={lm_title} subtitle={lm_subtitle} imageSrc={lm_image} lm_list={lm_list} />
     </SectionContainer>
   )
 }
