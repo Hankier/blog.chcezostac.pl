@@ -32,14 +32,8 @@ interface LayoutProps {
 }
 
 export default function PostLayout({ content, authorDetails, next, prev, children }: LayoutProps) {
-  const { filePath, path, slug, date, title, tags, lm_title, lm_subtitle, lm_image, lm_list } = content
+  const { filePath, path, slug, date, title, tags, lm_title, lm_subtitle, lm_image, lm_list, oto_title, oto_button, oto_link } = content
   const basePath = path.split('/')[0]
-  console.log('basePath', basePath)
-  console.log('filepath', filePath)
-  console.log('lm_imageSrc', lm_image)
-  //const lm_title = 'Odbierz Bezpłatny webinar <br /> Małgorzaty Biegańskiej-Hendryk' 
-  //const lm_subtitle = '"Jak pokonać 5 najczęstszych problemów w opiece nad kotem?"'
-  //const lm_imageSrc = '/static/images/cat-lm.jpg'
 
   return (
     <SectionContainer>
@@ -179,7 +173,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                   )}
                 </div>
                 <div className="w-full">
-                <BannerSmallOTO text="Chcesz lepiej zrozumieć potrzeby swojego kota?" buttonText="Dołącz do naszego kursu!" href="https://twojkot.chcezostac.pl/komunikacja-blog" />
+                <BannerSmallOTO text={oto_title} buttonText={oto_button} href={oto_link} />
                 </div>
                 <div className="pt-4 xl:pt-8 pb-4">
                   <Link

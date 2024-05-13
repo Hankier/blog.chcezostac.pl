@@ -109,6 +109,10 @@ export const Blog = defineDocumentType(() => ({
     lm_subtitle: { type: 'string' },
     lm_image: { type: 'string' },
     lm_list: { type: 'string' },
+    oto_title: { type: 'string' },
+    oto_button: { type: 'string' },
+    oto_image: { type: 'string' },
+    oto_link: { type: 'string' },
   },
   computedFields: {
     ...computedFields,
