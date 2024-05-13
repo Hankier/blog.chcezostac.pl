@@ -12,6 +12,7 @@ import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import BannerSmallOTO from '@/components/BannerSmallOTO'
 import FollowOnSocial from '@/components/FollowOnSocial'
 import PostInfoCard from '@/components/PostInfoCard'
+import ModalLeadMagnet from '@/components/ModalLeadMagnet'
 
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
 const discussUrl = (path) =>
@@ -195,6 +196,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
           </div>
         </div>
       </article>
+      <ModalLeadMagnet />
     </SectionContainer>
   )
 }

@@ -49,7 +49,7 @@ const NewsletterForm = () => {
         <div className="w-full bg-gradient-to-r from-cz-blue to-cz-pink pt-px">
             <div className="w-full bg-cz-bg-dark text-center mx-auto py-4">
                 <div className="pb-4">
-                    <h2 class="text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cz-purple to-cz-pink">Zapisz się na newsletter i bądź na bieżąco.</h2>
+                    <h2 className="text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cz-purple to-cz-pink">Zapisz się na newsletter i bądź na bieżąco.</h2>
                 </div>
                 <form onSubmit={handleSubmit}>
                     <input 
