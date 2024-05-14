@@ -20,7 +20,7 @@ export default function Home({ posts }) {
           </p>
         </div>
         <div className="w-full bg-gradient-to-r from-cz-blue to-cz-pink pt-px">
-          <ul className="w-full bg-cz-bg-dark">
+          <ul className="w-full bg-cz-bg-dark dark:divide-gray-700 xl:divide-y">
             {!posts.length && 'No posts found.'}
             {posts.slice(0, MAX_DISPLAY).map((post) => {
               const { slug, date, title, summary, tags, images } = post
