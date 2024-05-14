@@ -1,6 +1,8 @@
 "use client";
 
+
 import { FormEvent, useRef, useState } from "react";
+import Link from './Link';
 
 type MembersSuccessResponse = {
   // define the type here or import
@@ -69,6 +71,9 @@ const NewsletterForm = () => {
                     Zapisuję się!
                     </button>
                 </form>
+                <div className="mt-2 text-sm text-gray-400 w-1/2 text-center mx-auto">
+                    Zapoznałem się z <Link href="https://panel.chcezostac.pl/podstrona/1/regulamin.html" className="underline hover:text-cz-purple">Regulaminem</Link> oraz <Link href="https://panel.chcezostac.pl/podstrona/2/politykaprywatnosci.html" className="underline hover:text-cz-purple">Polityką Prywatności</Link> i akceptuję ich postanowienia. Wypełniając formularz, wyrażasz zgodę na otrzymywanie wartościowych treści w newsletterze od "Chcę Zostać". W każdej chwili możesz się z niego wypisać.*
+                </div>
                 {successMessage && <p>{successMessage}</p>}
                 {errorMessage && <p>{errorMessage}</p>}
             </div>

@@ -41,7 +41,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
       <article>
         <div className="lg:grid lg:grid-cols-8 lg:gap-0 w-full lg:w-4/5 mx-auto px-6 lg:px-0 pt-4 lg:pt-12">
           <div className="lg:col-span-5">
-            <div className="text-gray-300 text-sm font-light">
+            <div className="text-gray-300 text-base font-light">
             <Link href='https://chcezostac.pl' className="hover:text-cz-pink hover:font-normal">Strona Główna</Link> &gt; <Link href='/' className="hover:text-cz-pink hover:font-normal">Blog</Link> &gt; <Link href={`/${slug}`} className="hover:text-cz-pink hover:font-normal">{title}</Link>
             </div>
             <header className="pt-6 xl:pb-6">
@@ -57,7 +57,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 <dd>
                   <ul className="flex flex-wrap justify-left gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
                     {authorDetails.map((author) => (
-                      <li className="flex items-center space-x-2" key={author.name}>
+                      <li className="flex items-center space-x-2 text-xl" key={author.name}>
                         {author.avatar && (
                           <Image
                             src={author.avatar}
@@ -99,7 +99,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 )}
                 </div>
               <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-                <div className="prose max-w-none pb-8 dark:prose-invert">{children}</div>
+                <div className="prose max-w-none pb-8 dark:prose-invert text-lg">{children}</div>
               </div>
               <div className="w-full pt-4 pb-8">
               <div className="w-full bg-gradient-to-r from-cz-purple to-cz-pink py-px">
@@ -134,10 +134,10 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     )}
                     <dl className="font-medium leading-3 md:leading-5">
                       <dt className="sr-only">Imię i nazwisko</dt>
-                      <dd className="text-normal lg:text-lg text-gray-900 dark:text-gray-100">{author.name}</dd>
-                        <div className="mt-2 md:mt-4">
+                      <dd className="text-normal font-bold lg:text-lg text-gray-900 dark:text-gray-100">{author.name}</dd>
+                        <div className="mt-4">
                           <dt className="sr-only">Informacja o autorze</dt>
-                          <dd className="text-sm lg:text-normal font-normal leading-6 dark:text-gray-200">
+                          <dd className="text-sm lg:text-base font-normal leading-6 dark:text-gray-200">
                             {author.description}
                           </dd>
                         </div>
