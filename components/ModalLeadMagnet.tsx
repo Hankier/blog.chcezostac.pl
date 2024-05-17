@@ -75,17 +75,18 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
 
     return (
         <div className="fixed inset-0 bg-cz-bg-dark bg-opacity-70 flex justify-center items-center">
-            <div className="bg-white rounded-lg w-4/5 lg:w-full max-w-2xl p-px bg-gradient-to-r from-cz-blue to-cz-pink ">
-                <div className="bg-cz-bg-dark p-5 rounded-lg w-full max-w-2xl">
+            <div className="bg-white rounded-lg w-4/5 lg:w-1/2 p-px bg-gradient-to-r from-cz-blue to-cz-pink ">
+                <div className="bg-cz-bg-dark p-5 rounded-lg w-full">
                     <button onClick={handleClose} className="absolute top-4 right-4 text-2xl">
                         &times;
                     </button>
-                    <div className="">
-                        <span dangerouslySetInnerHTML={{ __html: title }} />
-                    </div>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-4">
-                        <img src={imageSrc} alt="Modal Image" className="lg:w-1/2 w-1/2 object-cover" />
-                        <div className="flex flex-col items-center w-full lg:w-2/3">
+                        <div className="w-full lg:w-2/3 text-sm lg:text-base">
+                            <span dangerouslySetInnerHTML={{ __html: title }} />
+                        </div>
+                    <div className="w-full lg:w-1/3 items-center">
+                        <img src={imageSrc} alt="Modal Image" className="hidden lg:block object-cover w-1/2 mx-auto py-4" />
+                        <div className="flex flex-col items-center">
                             <form onSubmit={handleSubmit} className="flex flex-col items-center">
                                 <input 
                                     className="text-white mx-4 font-bold text-lg py-2 px-2 rounded bg-cz-bg-dark border border-gray-200 focus:border-cz-magenta focus:ring-cz-magenta" placeholder="Email"
@@ -108,6 +109,7 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
                                 Zapoznałem się z <Link href="https://panel.chcezostac.pl/podstrona/1/regulamin.html" className="underline hover:text-cz-purple">Regulaminem</Link> oraz <Link href="https://panel.chcezostac.pl/podstrona/2/politykaprywatnosci.html" className="underline hover:text-cz-purple">Polityką Prywatności</Link> i akceptuję ich postanowienia. Wypełniając formularz, wyrażasz zgodę na otrzymywanie wartościowych treści w newsletterze od "Chcę Zostać". W każdej chwili możesz się z niego wypisać.*
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
