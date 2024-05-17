@@ -80,10 +80,9 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
                     <button onClick={handleClose} className="absolute top-4 right-4 text-2xl">
                         &times;
                     </button>
-                    <h2 className="text-lg lg:text-xl text-center"><span dangerouslySetInnerHTML={{ __html: title }} />
-                    <br />
-                    <br />
-                    <span className="font-bold bg-clip-text text-xl lg:text-2xl text-transparent bg-gradient-to-r from-cz-blue to-cz-pink">{subtitle}</span></h2>
+                    <div className="">
+                        <span dangerouslySetInnerHTML={{ __html: title }} />
+                    </div>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-4">
                         <img src={imageSrc} alt="Modal Image" className="lg:w-1/2 w-1/2 object-cover" />
                         <div className="flex flex-col items-center w-full lg:w-2/3">
