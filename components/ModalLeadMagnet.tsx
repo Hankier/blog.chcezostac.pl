@@ -90,11 +90,11 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
                             <span dangerouslySetInnerHTML={{ __html: subtitle }} />
                         </div>
                     <div className="w-full lg:w-1/3 items-center">
-                        <img src={imageSrc} alt="Modal Image" className="hidden lg:block object-cover w-1/2 mx-auto py-4" />
+                        <img src={imageSrc} alt="Modal Image" className="hidden lg:block object-cover w-3/4 mx-auto pb-2" />
                         <div className="flex flex-col items-center">
                             <form onSubmit={handleSubmit} className="flex flex-col items-center">
                                 <input 
-                                    className="text-white mx-4 font-bold text-sm lg:text-lg py-2 px-2 rounded bg-cz-bg-dark border border-gray-200 focus:border-cz-magenta focus:ring-cz-magenta" placeholder="Email"
+                                    className="text-white mx-4 font-bold text-sm py-2 px-2 rounded bg-cz-bg-dark border border-gray-200 focus:border-cz-magenta focus:ring-cz-magenta" placeholder="Email"
                                     value={input}
                                     onChange={e => setInput(e.target.value)}
                                     placeholder="jan@kowalski.pl"
@@ -110,7 +110,7 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
                                 Odbieram!
                                 </button>
                             </form>
-                            <div className="mt-2 text-xs lg:text-sm text-gray-400 w-full text-center mx-auto">
+                            <div className="mt-2 text-xs text-gray-400 w-full text-center mx-auto">
                                 Zapoznałem się z <Link href="https://panel.chcezostac.pl/podstrona/1/regulamin.html" className="underline hover:text-cz-purple">Regulaminem</Link> oraz <Link href="https://panel.chcezostac.pl/podstrona/2/politykaprywatnosci.html" className="underline hover:text-cz-purple">Polityką Prywatności</Link> i akceptuję ich postanowienia. Wypełniając formularz, wyrażasz zgodę na otrzymywanie wartościowych treści w newsletterze od "Chcę Zostać". W każdej chwili możesz się z niego wypisać.*
                             </div>
                         </div>
