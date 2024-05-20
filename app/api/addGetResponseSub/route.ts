@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
-  //const API_KEY = process.env.GETRESPONSE_API_KEY
-  const API_KEY = 'cwpon305rdg2wb85kap1cqxk7htvvq0i'
+  const API_KEY = process.env.GETRESPONSE_API_KEY
+ 
 
   const API_URL = 'https://api.getresponse.com/v3/contacts/'
 
