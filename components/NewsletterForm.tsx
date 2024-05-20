@@ -45,7 +45,7 @@ const NewsletterForm = () => {
             setError(true)
             setMessage('Coś poszło nie tak. Odśwież stronę i spróbuj ponownie później.');
         } else {
-            setMessage('Zostałeś/aś poprawnie zapisany/a na newsletter! Diękujemy i do zobaczenia w Twojej skrzynce mailowej!');
+            setMessage('Zostałeś/aś poprawnie zapisany/a na newsletter! Dziękujemy i do zobaczenia w Twojej skrzynce mailowej!');
             setActive(false);
             setSubscribed(true);
         }
