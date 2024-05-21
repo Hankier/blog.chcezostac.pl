@@ -8,6 +8,7 @@ import { sortPosts, coreContent, allCoreContent } from 'pliny/utils/contentlayer
 import { allBlogs, allAuthors } from 'contentlayer/generated'
 import type { Authors, Blog } from 'contentlayer/generated'
 import PostLayout from '@/layouts/PostLayout'
+import PostLayoutSimple from '@/layouts/PostLayoutSimple'
 import PostLayoutNoAuthor from '@/layouts/PostLayoutNoAuthor'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
@@ -17,6 +18,7 @@ const defaultLayout = 'PostLayout'
 const layouts = {
   PostLayout,
   PostLayoutNoAuthor,
+  PostLayoutSimple,
 }
 
 export async function generateMetadata({

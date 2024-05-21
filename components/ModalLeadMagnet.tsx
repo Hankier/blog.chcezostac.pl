@@ -7,9 +7,10 @@ import { useState, useEffect, useRef } from 'react';
 const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [input, setInput] = useState("");
-    const [successMessage, setSuccessMessage] = useState<MembersSuccessResponse>();
-    const [errorMessage, setErrorMessage] = useState("");
     const [active, setActive] = useState(false);
+    const [error, setError] = useState(false)
+    const [message, setMessage] = useState('')
+    const [subscribed, setSubscribed] = useState(false)
     const buttonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
@@ -50,26 +51,35 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
 
         if (!active) {
         setActive(true);
+        }
 
         const res = await fetch("/api/addGetResponseSub", {
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+            email: email,
+            list : lm_list
+        }),
         headers: { "Content-Type": "application/json" },
         method: "POST",
         });
         
-        const data = await res.json();
-        
-        if (!res.ok) {
-          setErrorMessage('Some error message');
+
+        if (res.status === 409) {
+            setError(true)
+            setMessage('Ten adres email jest już zapisany na newsletter. Jeśli nie otrzymujesz od nas wiadomości, sprawdź folder SPAM lub skontaktuj się z nami.')
+        } else if (!res.status.toString().startsWith("2")) {
+            setError(true)
+            setMessage('Coś poszło nie tak. Odśwież stronę i spróbuj ponownie później.');
+        } else if (res.status.toString().startsWith("2")) {
+            setMessage('Zostałeś/aś poprawnie zapisany/a na newsletter! Dziękujemy i do zobaczenia w Twojej skrzynce mailowej!');
+            setActive(false);
+            setSubscribed(true);
         } else {
-          setSuccessMessage(data.message);
+            setError(true)
+            setMessage('Coś poszło nie tak. Odśwież stronę i spróbuj ponownie później.');
         }
-        
-        console.log(data);
-        
-        setActive(false);
-      }
     }
+
+    console.log('Msg:', message)
 
     if (!isVisible) return null;
 
@@ -96,7 +106,7 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
                                 <input 
                                     className="text-white mx-4 font-bold text-sm py-2 px-2 rounded bg-cz-bg-dark border border-gray-200 focus:border-cz-magenta focus:ring-cz-magenta" placeholder="Email"
                                     value={input}
-                                    onChange={e => setInput(e.target.value)}
+                                    onChange={e => { setInput(e.target.value); setActive(true) }}
                                     placeholder="jan@kowalski.pl"
                                     required
                                     type="email"
@@ -104,15 +114,27 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
                                 <button
                                     ref={buttonRef}
                                     className={`${active && "active"} mt-4 px-4 py-2 bg-cz-magenta hover:bg-cz-pink text-white rounded-md disabled:grayscale-[65%] disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base`}
-                                    disabled={!input}
+                                    disabled={!input || !active || error}
                                     type="submit"
                                 >
-                                Odbieram!
+                                    {error ? 'Spróbuj później.' : (subscribed ? 'Dziękujemy!' : 'Zapisuję się!')}
                                 </button>
                             </form>
-                            <div className="mt-2 text-xs text-gray-400 w-full text-center mx-auto">
+                            {error && (
+                                <div className="mt-2 text-sm text-red-600 w-full text-center mx-auto">
+                                {message}
+                                </div>
+                            )}
+                            { subscribed ? (
+                            <div className="mt-2 text-sm text-green-500 w-full text-center mx-auto">
+                                {message}
+                            </div>
+                            ):(
+                            <div className="mt-2 text-sm text-gray-400 w-full text-center mx-auto">
                                 Zapoznałem się z <Link href="https://panel.chcezostac.pl/podstrona/1/regulamin.html" className="underline hover:text-cz-purple">Regulaminem</Link> oraz <Link href="https://panel.chcezostac.pl/podstrona/2/politykaprywatnosci.html" className="underline hover:text-cz-purple">Polityką Prywatności</Link> i akceptuję ich postanowienia. Wypełniając formularz, wyrażasz zgodę na otrzymywanie wartościowych treści w newsletterze od "Chcę Zostać". W każdej chwili możesz się z niego wypisać.*
                             </div>
+                            )
+                            }
                         </div>
                     </div>
                     </div>
