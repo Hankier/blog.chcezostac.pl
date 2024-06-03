@@ -100,9 +100,8 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
               <span dangerouslySetInnerHTML={{ __html: subtitle }} />
             </div>
             <div className="w-full items-center lg:w-1/3">
-              <img alt="Modal Image" />
               <Image
-                alt="Modal Image"
+                alt="Lead Magnet thumbnail"
                 src={imageSrc}
                 className="mx-auto hidden w-3/4 object-cover pb-2 lg:block"
                 width={256}
