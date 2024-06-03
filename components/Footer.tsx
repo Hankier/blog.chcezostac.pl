@@ -40,13 +40,13 @@ const Footer = () =>  {
                     </h2>
                     <nav className="mb-10 list-none">
                         <li className="mt-3">
-                            <Link href={siteMetadata.facebook} className="cursor-pointer hover:text-cz-pink">Facebook</Link>
+                            <Link href={siteMetadata.facebook || '#'} className="cursor-pointer hover:text-cz-pink">Facebook</Link>
                         </li>
                         <li className="mt-3">
-                            <Link href={siteMetadata.instagram} className="cursor-pointer hover:text-cz-pink">Instagram</Link>
+                            <Link href={siteMetadata.instagram || '#'} className="cursor-pointer hover:text-cz-pink">Instagram</Link>
                         </li>
                         <li className="mt-3">
-                            <Link href={siteMetadata.youtube} className="cursor-pointer hover:text-cz-pink">YouTube</Link>
+                            <Link href={siteMetadata.youtube || '#'} className="cursor-pointer hover:text-cz-pink">YouTube</Link>
                         </li>
                     </nav>
                 </div>
