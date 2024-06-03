@@ -1,12 +1,12 @@
 {
-  "name": "tailwind-nextjs-starter-blog",
+  "name": "blog.chcezostac.pl",
   "version": "2.2.0",
   "private": true,
   "scripts": {
     "start": "next dev",
     "dev": "cross-env INIT_CWD=$PWD next dev",
     "build": "cross-env INIT_CWD=$PWD next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
-    "serve": "next start",
+    "serve": "next start-p 46710",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
     "prepare": "husky"
