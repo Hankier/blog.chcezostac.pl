@@ -16,13 +16,10 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
     useEffect(() => {
         const isModalClosed = localStorage.getItem('modalClosed') === 'true';
         if (isModalClosed) return;
-        console.log('Window Height:', window.innerHeight)
 
         const handleScroll = () => {
             const totalPageHeight = document.documentElement.scrollHeight;  // Total height of the document
             const triggerHeight = totalPageHeight / 4;                     // Trigger when scrolled half of the page
-            console.log('Trigger Height:', triggerHeight)
-            console.log('Scroll Y:', window.scrollY)
             if (window.scrollY > triggerHeight) {
                 setIsVisible(true);
                 window.removeEventListener('scroll', handleScroll);
@@ -38,7 +35,7 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
 
     const handleClose = () => {
         setIsVisible(false);
-        //localStorage.setItem('modalClosed', 'true');
+        localStorage.setItem('modalClosed', 'true');
     };
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -79,7 +76,6 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
         }
     }
 
-    console.log('Msg:', message)
 
     if (!isVisible) return null;
 
@@ -87,7 +83,7 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
         <div className="fixed inset-0 bg-cz-bg-dark bg-opacity-70 flex justify-center items-center">
             <div className="bg-white rounded-lg w-5/6 lg:w-1/2 p-px bg-gradient-to-r from-cz-blue to-cz-pink ">
                 <div className="bg-cz-bg-dark p-2 lg:p-5 rounded-lg w-full">
-                    <button onClick={handleClose} className="absolute top-4 right-4 text-2xl">
+                    <button onClick={handleClose} className="absolute top-12 right-12 text-5xl">
                         &times;
                     </button>
                     <div>
@@ -104,7 +100,7 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
                         <div className="flex flex-col items-center">
                             <form onSubmit={handleSubmit} className="flex flex-col items-center">
                                 <input 
-                                    className="text-white mx-4 font-bold text-sm py-2 px-2 rounded bg-cz-bg-dark border border-gray-200 focus:border-cz-magenta focus:ring-cz-magenta" placeholder="Email"
+                                    className="text-white mx-4 font-bold text-sm py-2 px-2 rounded bg-cz-bg-dark border border-gray-200 focus:border-cz-magenta focus:ring-cz-magenta"
                                     value={input}
                                     onChange={e => { setInput(e.target.value); setActive(true) }}
                                     placeholder="jan@kowalski.pl"
