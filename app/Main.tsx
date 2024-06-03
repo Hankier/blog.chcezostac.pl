@@ -30,7 +30,13 @@ export default function Home({ posts }) {
                     <div className="space-y-2 lg:grid lg:grid-cols-4 lg:items-start xl:space-y-0">
                       <div className="hidden px-4 lg:block">
                         {images.map((image) => (
-                          <Image key={`img-${slug}`} src={image} alt={title} width={256} height={128} />
+                          <Image
+                            key={`img-${slug}`}
+                            src={image}
+                            alt={title}
+                            width={256}
+                            height={128}
+                          />
                         ))}
                       </div>
                       <div className="space-y-5 lg:col-span-3">

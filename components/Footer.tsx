@@ -12,9 +12,12 @@ const Footer = () => {
               href="https://chcezostac.pl/"
               className="font-small title-font flex w-full items-center justify-center md:justify-start lg:w-1/3"
             >
-              <img
-                src="https://2uvxrfrieeym.cdn.shift8web.com/wp-content/uploads/2019/11/chce-zostac-LOGO_8-1-1-300x221.png"
-                className="h-20 w-auto"
+              <Image
+                alt="ChcęZostać logo"
+                src="/static/images/logo.png"
+                className="object-cover object-center"
+                width={114}
+                height={84}
               />
             </Link>
             <div className="w-full pl-20 lg:w-2/3">

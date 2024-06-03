@@ -1,6 +1,7 @@
 'use client'
 import React, { FormEvent } from 'react'
-import Link from '@/components/Link'
+import Link from './Link'
+import Image from './Image'
 import { useState, useEffect, useRef } from 'react'
 
 const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
@@ -99,10 +100,13 @@ const ModalLeadMagnet = ({ title, subtitle, imageSrc, lm_list }) => {
               <span dangerouslySetInnerHTML={{ __html: subtitle }} />
             </div>
             <div className="w-full items-center lg:w-1/3">
-              <img
-                src={imageSrc}
+              <img alt="Modal Image" />
+              <Image
                 alt="Modal Image"
+                src={imageSrc}
                 className="mx-auto hidden w-3/4 object-cover pb-2 lg:block"
+                width={256}
+                height={256}
               />
               <div className="flex flex-col items-center">
                 <form onSubmit={handleSubmit} className="flex flex-col items-center">
