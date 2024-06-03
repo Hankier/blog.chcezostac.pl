@@ -5,7 +5,7 @@ import type { MDXComponents } from 'mdx/types'
 import Image from './Image'
 import CustomLink from './Link'
 import TableWrapper from './TableWrapper'
-import BannerOTO from '@/components/BannerOTO' 
+import BannerOTO from '@/components/BannerOTO'
 
 export const components: MDXComponents = {
   Image,

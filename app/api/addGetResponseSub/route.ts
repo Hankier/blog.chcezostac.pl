@@ -1,8 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
   const API_KEY = process.env.GETRESPONSE_API_KEY
- 
 
   const API_URL = 'https://api.getresponse.com/v3/contacts/'
 
@@ -12,21 +11,21 @@ export async function POST(req: NextRequest) {
   const list = data.list
 
   if (!email) {
-    return new Response(JSON.stringify({ error: "Adres email jest wymagany." }));
+    return new Response(JSON.stringify({ error: 'Adres email jest wymagany.' }))
   }
 
   const req_data = {
     email: email,
     campaign: {
-      campaignId: list
-    }
+      campaignId: list,
+    },
   }
   console.log(req_data)
   const response = await fetch(`${API_URL}`, {
     body: JSON.stringify(req_data),
     headers: {
       'Content-Type': 'application/json',
-      'X-Auth-Token': `api-key ${API_KEY}`
+      'X-Auth-Token': `api-key ${API_KEY}`,
     },
     method: 'POST',
   })
