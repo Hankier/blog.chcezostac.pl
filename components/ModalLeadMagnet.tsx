@@ -1,6 +1,5 @@
 "use client";
-
-import Image from '@/components/Image';
+import React, { FormEvent } from 'react';
 import Link from '@/components/Link';
 import { useState, useEffect, useRef } from 'react';
 

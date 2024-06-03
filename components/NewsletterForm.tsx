@@ -60,7 +60,7 @@ const NewsletterForm = () => {
                 </div>
                 <form onSubmit={handleSubmit}>
                     <input 
-                        className="text-white mx-4 font-bold text-lg py-2 px-2 rounded bg-cz-bg-dark border border-gray-200 focus:border-cz-magenta focus:ring-cz-magenta" placeholder="Email"
+                        className="text-white mx-4 font-bold text-lg py-2 px-2 rounded bg-cz-bg-dark border border-gray-200 focus:border-cz-magenta focus:ring-cz-magenta"
                         value={input}
                         onChange={e => {setInput(e.target.value); setActive(true)}}
                         placeholder="jan@kowalski.pl"
@@ -69,7 +69,7 @@ const NewsletterForm = () => {
                     />
                     <button
                         ref={buttonRef}
-                        className={`${active && "active"} text-white font-bold text-lg py-2 px-2 rounded bg-gradient-to-r from-cz-blue to-cz-pink hover:from-cz-purple hover:to-cz-pink disabled:from-cz-blue disabled:to-cz-pink disabled:cursor-not-allowed text-sm md:text-base`}
+                        className={`${active && "active"} text-white font-bold text-lg py-2 px-2 rounded bg-gradient-to-r from-cz-blue to-cz-pink hover:from-cz-purple hover:to-cz-pink disabled:from-cz-blue disabled:to-cz-pink disabled:cursor-not-allowed md:text-base`}
                         disabled={!active || !input}
                         type="submit"
                     >
