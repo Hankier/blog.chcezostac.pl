@@ -95,7 +95,7 @@ export default function Home({ posts }) {
           </Link>
         </div>
       )}
-      <div className="mx-auto w-full divide-y divide-gray-200 px-6 pt-4 dark:divide-gray-700 lg:w-4/5 lg:px-0 lg:pt-12">
+      <div className="mx-auto w-full divide-y divide-gray-200 px-6 pt-4 dark:divide-gray-700 lg:w-4/5 max-w-7xl lg:px-0 lg:pt-12">
         <NewsletterForm />
       </div>
     </>
