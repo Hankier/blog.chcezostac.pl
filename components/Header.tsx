@@ -7,7 +7,7 @@ import LoginButton from './LoginButton'
 const Header = () => {
   return (
     <header className="w-full">
-      <div className="mx-auto flex w-4/5 items-center justify-between pt-8">
+      <div className="mx-auto flex w-4/5 max-w-7xl items-center justify-between pt-8">
         <div>
           <Link href="/" aria-label={siteMetadata.headerTitle}>
             <div className="flex items-center justify-between">
