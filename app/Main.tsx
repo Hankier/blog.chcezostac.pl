@@ -10,7 +10,7 @@ const MAX_DISPLAY = 5
 export default function Home({ posts }) {
   return (
     <>
-      <div className="mx-auto w-full divide-y divide-gray-200 px-6 pt-4 dark:divide-gray-700 lg:w-4/5 lg:px-0 lg:pt-12">
+      <div className="mx-auto w-full divide-y divide-gray-200 px-6 pt-4 dark:divide-gray-700 lg:w-4/5 max-w-7xl lg:px-0 lg:pt-12">
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Najnowsze wpisy
