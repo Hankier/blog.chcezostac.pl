@@ -57,7 +57,7 @@ export default function PostLayoutSimple({
     <SectionContainer>
       <ScrollTopAndComment />
       <article>
-        <div className="mx-auto w-full px-6 pt-4 lg:grid lg:w-4/5 max-w-7xl lg:px-0 lg:pt-12">
+        <div className="mx-auto w-full max-w-7xl px-6 pt-4 lg:grid lg:w-4/5 lg:px-0 lg:pt-12">
           <div className="">
             <div className="text-base font-light text-gray-300">
               <Link href="https://chcezostac.pl" className="hover:font-normal hover:text-cz-pink">
@@ -129,8 +129,8 @@ export default function PostLayoutSimple({
                   </div>
                 )}
               </div>
-              <div className='justify-center flex w-full pb-4 pt-4'>
-                <div className="max-w-6xl prose pb-8 text-lg dark:prose-invert">{children}</div>
+              <div className="flex w-full justify-center pb-4 pt-4">
+                <div className="prose max-w-6xl pb-8 text-lg dark:prose-invert">{children}</div>
               </div>
               <div className="w-full pb-8 pt-4">
                 <div className="w-full bg-gradient-to-r from-cz-purple to-cz-pink py-px">

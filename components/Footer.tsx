@@ -5,7 +5,7 @@ import siteMetadata from '@/data/siteMetadata'
 const Footer = () => {
   return (
     <footer className="body-font text-s w-full bg-stone-950 text-white">
-      <div className="container w-full lg:mx-auto lg:w-4/5 max-w-7xl">
+      <div className="container w-full max-w-7xl lg:mx-auto lg:w-4/5">
         <div className="md:flex-no-wrap container mx-auto flex flex-col flex-wrap py-4 md:flex-row md:items-center lg:items-start">
           <div className="mx-auto flex w-full flex-grow text-center md:mx-0 lg:w-2/5 lg:text-left">
             <Link
