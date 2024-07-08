@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { CoreContent } from 'pliny/utils/contentlayer'
-import type { Blog } from 'contentlayer/generated'
+import type { Blog, Authors } from 'contentlayer/generated'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
@@ -10,12 +10,7 @@ import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import BannerSmallOTO from '@/components/BannerSmallOTO'
-import FollowOnSocial from '@/components/FollowOnSocial'
 import ModalLeadMagnet from '@/components/ModalLeadMagnet'
-
-const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
-const discussUrl = (path) =>
-  `https://mobile.twitter.com/search?q=${encodeURIComponent(`${siteMetadata.siteUrl}/${path}`)}`
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   year: 'numeric',
@@ -24,12 +19,19 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 
 interface LayoutProps {
   content: CoreContent<Blog>
+  authorDetails: CoreContent<Authors>[]
   next?: { path: string; title: string }
   prev?: { path: string; title: string }
   children: ReactNode
 }
 
-export default function PostLayoutNoAuthor({ content, next, prev, children }: LayoutProps) {
+export default function PostLayoutSimple({
+  content,
+  authorDetails,
+  next,
+  prev,
+  children,
+}: LayoutProps) {
   const {
     filePath,
     path,
@@ -51,8 +53,8 @@ export default function PostLayoutNoAuthor({ content, next, prev, children }: La
     <SectionContainer>
       <ScrollTopAndComment />
       <article>
-        <div className="mx-auto w-full px-6 pt-4 lg:grid lg:w-4/5 lg:grid-cols-8 lg:gap-0 lg:px-0 lg:pt-12">
-          <div className="lg:col-span-5">
+        <div className="mx-auto w-full max-w-7xl px-6 pt-4 lg:grid lg:w-4/5 lg:px-0 lg:pt-12">
+          <div className="">
             <div className="text-base font-light text-gray-300">
               <Link href="https://chcezostac.pl" className="hover:font-normal hover:text-cz-pink">
                 Strona Główna
@@ -74,17 +76,25 @@ export default function PostLayoutNoAuthor({ content, next, prev, children }: La
               </div>
             </header>
             <div className="grid-rows-[auto_1fr]">
-              <div className="divide-gray-200 text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2 ">
-                <dl className="whitespace-nowrap font-medium leading-5">
-                  <div>
-                    <dt className="sr-only">Opublikowano</dt>
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>
-                        {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
-                      </time>
-                    </dd>
-                  </div>
-                </dl>
+              <dl className="pt-6 xl:pt-11">
+                <dt className="sr-only">Autor</dt>
+                <dd>
+                  <ul className="justify-left flex flex-wrap gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
+                    <div>
+                      <dt className="sr-only">Opublikowano</dt>
+                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                        <time dateTime={date}>
+                          {new Date(date).toLocaleDateString(
+                            siteMetadata.locale,
+                            postDateTemplate
+                          )}
+                        </time>
+                      </dd>
+                    </div>
+                  </ul>
+                </dd>
+              </dl>
+              <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="pt-4">
                     <h2 className="text-left text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
@@ -98,8 +108,8 @@ export default function PostLayoutNoAuthor({ content, next, prev, children }: La
                   </div>
                 )}
               </div>
-              <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-                <div className="prose max-w-none pb-8 text-lg dark:prose-invert">{children}</div>
+              <div className="flex w-full justify-center pb-4 pt-4">
+                <div className="prose max-w-6xl pb-8 text-lg dark:prose-invert">{children}</div>
               </div>
               <div className="w-full pb-8 pt-4">
                 <div className="w-full bg-gradient-to-r from-cz-purple to-cz-pink py-px">
@@ -160,13 +170,6 @@ export default function PostLayoutNoAuthor({ content, next, prev, children }: La
                   </Link>
                 </div>
               </footer>
-            </div>
-          </div>
-          <div className="hidden pb-8 pt-8 lg:col-span-3 lg:block">
-            <FollowOnSocial />
-            <div className="w-full pb-8 pt-24">
-              <div className="w-full pb-8 pt-4 text-center text-3xl">Ostatnie</div>
-              <div className="w-full pb-8 pt-4"></div>
             </div>
           </div>
         </div>
